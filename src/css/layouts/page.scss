@@ -1,0 +1,15 @@
+.Page {
+  @include full-size();
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @each $key, $value in $colors {
+    &[data-color="#{$key}"] {
+      *::selection {
+        color: $white;
+        background-color: $value;
+      }
+    }
+  }
+}

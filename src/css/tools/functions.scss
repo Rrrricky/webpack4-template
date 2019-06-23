@@ -1,0 +1,7 @@
+@function grid($n) {
+  @return $n * $column + ($n - 1) * $gutter;
+}
+
+@function grid-media($n) {
+  @return grid($n) + $gutter * 4;
+}

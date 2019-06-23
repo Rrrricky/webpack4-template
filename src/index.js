@@ -1,4 +1,4 @@
-import './css/main.styl'
+import './css/main.scss'
 import Toto from './js/Toto.js'
 import image from './images/image.png'
 

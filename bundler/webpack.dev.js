@@ -28,12 +28,12 @@ module.exports = webpackMerge(
               ]
             },
             {
-              test: /\.styl$/,
+              test: /\.scss$/,
               use:
               [
                   'style-loader',
                   'css-loader',
-                  'stylus-loader'
+                  'sass-loader'
               ]
             }
           ], 
