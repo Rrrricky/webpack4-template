@@ -3,6 +3,7 @@ const path = require('path') // Handle path file (already included w/ node.js)
 const webpackMerge = require('webpack-merge') // For merging the 3 webpack files
 const commonConfiguration = require('./webpack.common.js')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const OptimizeCSSAssets = require("optimize-css-assets-webpack-plugin") // Minify css from sass
 
 module.exports = webpackMerge(
     commonConfiguration,
@@ -12,6 +13,7 @@ module.exports = webpackMerge(
         [
             new CleanWebpackPlugin(),
             new MiniCssExtractPlugin(),
+            new OptimizeCSSAssets()
         ],
         module:
         {
