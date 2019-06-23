@@ -11,10 +11,13 @@ module.exports = {
     },
     plugins:
     [
+        // new HtmlWebpackPlugin({
+        //     template: path.resolve(__dirname, '../src/index.html'),
+        //     minify: true
+        // }), 
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, '../src/index.html'),
-            minify: true
-        }), 
+          template: path.resolve(__dirname, '../src/index.pug'),
+        }),
         new CopyWebpackPlugin([ { from: 'static' } ]),
     ],
     devtool: 'source-map',
@@ -48,9 +51,13 @@ module.exports = {
                     }
                 ]
             },
-            {
-                test: /\.(html)$/,
-                use: ['html-loader']
+            // {
+            //     test: /\.(html)$/,
+            //     use: ['html-loader']
+            // },
+            { 
+              test: /\.pug$/,
+              use: ['pug-loader']
             },
             {
                 test: /\.js$/,
